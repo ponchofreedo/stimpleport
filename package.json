@@ -1,0 +1,40 @@
+{
+  "name": "stimpleport",
+  "version": "0.0.1",
+  "description": "2018 portfolio refresh",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ponchofreedo/stimpleport.git"
+  },
+  "keywords": [
+    "portfolio",
+    "designer"
+  ],
+  "author": "@ponchofreedo <zach.freed@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ponchofreedo/stimpleport/issues"
+  },
+  "homepage": "https://github.com/ponchofreedo/stimpleport",
+  "dependencies": {
+    "css-mqpacker": "^6.0.2",
+    "cssnano": "^3.10.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.1.0",
+    "postcss-sassy-mixins": "^2.1.0",
+    "postcss-simple-extend": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp-load-plugins": "^1.5.0",
+    "postcss": "^6.0.22",
+    "postcss-advanced-variables": "^2.3.3",
+    "postcss-scss": "^1.0.5",
+    "rucksack-css": "^1.0.2"
+  }
+}
