@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var postcss = require('gulp-postcss');
 var sourcemaps = require('gulp-sourcemaps');
 var runSequence = require('run-sequence');
+var size = require('gulp-size');
 
 const advancedVars = require('postcss-advanced-variables');
 const apply = require('postcss-apply');
@@ -23,17 +24,13 @@ gulp.task('scripts', function () {
 gulp.task('gzip', function() {
 });
 
-gulp.task('html', function () {
-});
-
 gulp.task('styles', function (cb) {
-
   return gulp.src('src/**/*.css')
     .pipe(sourcemaps.init())
     .pipe(postcss([
       cssimport(),
       customProps({
-        preserve: false,
+        preserve: 'compute',
         warnings: true
       }),
       apply(),
@@ -56,7 +53,14 @@ gulp.task('styles', function (cb) {
       })
     ]))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('public/'));
+    .pipe(gulp.dest('public/'))
+    .pipe(size({ title : 'css' }));
+});
+
+gulp.task('html', function () {
+  return gulp.src('src/**/*.html')
+    .pipe(gulp.dest('public/'))
+    .pipe(size({ title : 'html' }));
 });
 
 gulp.task('images', function (cb) {
