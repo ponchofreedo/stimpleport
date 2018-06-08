@@ -4,6 +4,7 @@
   "description": "2018 portfolio refresh",
   "main": "gulpfile.js",
   "scripts": {
+    "postcss": "postcss -o public/css/cssnano.css src/css/cssnano.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,21 +21,25 @@
     "url": "https://github.com/ponchofreedo/stimpleport/issues"
   },
   "homepage": "https://github.com/ponchofreedo/stimpleport",
+  "_comment": "css-mqpacker ^6.0.2 removed temporarily",
   "dependencies": {
-    "css-mqpacker": "^6.0.2",
-    "cssnano": "^3.10.0",
     "gulp-postcss": "^7.0.1",
     "gulp-sourcemaps": "^2.6.4",
-    "postcss-cssnext": "^3.1.0",
-    "postcss-import": "^11.1.0",
-    "postcss-sassy-mixins": "^2.1.0",
-    "postcss-simple-extend": "^1.0.0"
+    "run-sequence": "^2.2.1"
   },
   "devDependencies": {
+    "cssnano": "^3.10.0",
     "gulp-load-plugins": "^1.5.0",
     "postcss": "^6.0.22",
     "postcss-advanced-variables": "^2.3.3",
-    "postcss-scss": "^1.0.5",
-    "rucksack-css": "^1.0.2"
+    "postcss-apply": "^0.10.0",
+    "postcss-calc": "^6.0.1",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-custom-properties": "^7.0.0",
+    "postcss-import": "^11.1.0",
+    "postcss-nested-props": "^2.0.0",
+    "postcss-nesting": "^5.0.0",
+    "postcss-preset-env": "^5.1.0",
+    "postcss-scss": "^1.0.5"
   }
 }

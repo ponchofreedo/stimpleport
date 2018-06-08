@@ -1,0 +1,63 @@
+@import "test.css";
+@import "test/test.css";
+
+:root {
+  --navyBlue: #144566;
+  --electricBlue: #0099FF;
+  --defaultValue: 8;
+  --bigOlExtend: {
+    background-color: red;
+    border: calc(var(--defaultValue) * 1px) solid red;
+    display: grid;
+    float: left;
+    clear: none;
+    font: { family: helvetica; size: 21px; weight: bold; }
+    filter: grayscale(50%);
+  };
+}
+
+/* big ol comment */
+
+body {
+  display: flex;
+  color: var(--badBlue);
+  background-color: var(--electricBlue);
+  font-size: calc(var(--defaultValue) * 2px);
+
+  & div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: calc(var(--defaultValue) * 1px);
+    grid-auto-rows: minmax(100px, auto);
+
+    & a {
+
+      & i {
+        border: 1rem solid var(--navyBlue);
+      }
+
+      & :hover {
+        border: calc(var(--defaultValue) * 0.4px) solid blue;
+      }
+    }
+  }
+
+  & .bigOlExtend {
+    @apply --bigOlExtend;
+  }
+}
+
+div {
+  color: var(--navyBlue);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: calc(var(--defaultValue) * 1px);
+  grid-auto-rows: minmax(100px, auto);
+
+  & div {
+    background: red;
+  }
+}
