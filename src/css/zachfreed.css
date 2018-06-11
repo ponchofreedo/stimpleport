@@ -1,6 +1,7 @@
-@import "global-settings.css";
-@import "global-typography.css";
-@import "global-colors.css";
+@import "global/global.css";
+@import "helpers/helpers.css";
+@import "layout/layout.css";
+@import "pages/pages.css";
 
 :root {
 }

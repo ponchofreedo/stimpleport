@@ -1,0 +1,31 @@
+/* LAYOUT -- master */
+@import "../global/-settings.css";
+
+:root {
+}
+
+.container {
+  display: grid;
+  grid-gap: calc(var(--multiple) * 8px);
+  grid-template-areas:
+    "nav"
+    "header"
+    "body"
+    "footer";
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.header {
+  grid-area: header;
+}
+
+.content {
+  grid-area: body;
+}
+
+.footer {
+  grid-area: footer;
+}
