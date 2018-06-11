@@ -1,0 +1,13 @@
+/* GLOBAL -- vars */
+:root {
+  --navy-blue: #144566;
+  --electric-blue: #0099FF;
+  --bright-green: #13E296;
+  --light-gray: #F5F7FA;
+  --medium-gray: #6C7A88;
+  --dark-gray: #323232;
+  --white: #ffffff;
+  --black: #161616;
+
+  --multiple: 8;
+}
