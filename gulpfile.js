@@ -1,11 +1,9 @@
 // gonna try to do this without the loader this time
-//var $ = require('gulp-load-plugins')();
 
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
-var sourcemaps = require('gulp-sourcemaps');
-var runSequence = require('run-sequence');
-var size = require('gulp-size');
+var $ = require('gulp-load-plugins')();
+const runSequence = require('run-sequence');
 
 const advancedVars = require('postcss-advanced-variables');
 const apply = require('postcss-apply');
@@ -26,11 +24,11 @@ gulp.task('gzip', function() {
 
 gulp.task('styles', function (cb) {
   return gulp.src('src/**/*.css')
-    .pipe(sourcemaps.init())
+    .pipe($.sourcemaps.init())
     .pipe(postcss([
       cssimport(),
       customProps({
-        preserve: 'compute',
+        preserve: false,
         warnings: true
       }),
       apply(),
@@ -52,15 +50,15 @@ gulp.task('styles', function (cb) {
         })
       })
     ]))
-    .pipe(sourcemaps.write('.'))
+    .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('public/'))
-    .pipe(size({ title : 'css' }));
+    .pipe($.size({ title : 'css' }));
 });
 
 gulp.task('html', function () {
   return gulp.src('src/**/*.html')
     .pipe(gulp.dest('public/'))
-    .pipe(size({ title : 'html' }));
+    .pipe($.size({ title : 'html' }));
 });
 
 gulp.task('images', function (cb) {
