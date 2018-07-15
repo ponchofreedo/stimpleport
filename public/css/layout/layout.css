@@ -1,2 +1,33 @@
-.container{display:-ms-grid;display:grid;grid-gap:64px;grid-template-areas:"a" "b" "c" "d"}.nav{-ms-grid-row:1;-ms-grid-column:1;grid-area:a}.header{-ms-grid-row:3;-ms-grid-column:1;grid-area:b}.content{-ms-grid-row:5;-ms-grid-column:1;grid-area:c}.footer{-ms-grid-row:7;-ms-grid-column:1;grid-area:d}
+/* LAYOUT -- master */
+.container {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: calc(var(--multiple) * 8px);
+      grid-template-areas:
+    "nav"
+    "header"
+    "body"
+    "footer";
+}
+.nav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: nav;
+}
+.header {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: header;
+}
+.content {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: body;
+}
+.footer {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: footer;
+}
+
 /*# sourceMappingURL=layout.css.map */

@@ -1,7 +1,7 @@
-@import "global/global.css";
-@import "helpers/helpers.css";
-@import "layout/layout.css";
-@import "pages/pages.css";
+@import "./global/global.css";
+@import "./helpers/helpers.css";
+@import "./layout/layout.css";
+@import "./pages/pages.css";
 
 :root {
 }

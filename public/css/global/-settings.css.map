@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"-settings.css","sourcesContent":[]}
+{"version":3,"sources":["css/global/-settings.css"],"names":[],"mappings":"AAAA,oBAAoB","file":"-settings.css","sourcesContent":["/* GLOBAL -- vars */\n:root {\n  --navy-blue: #144566;\n  --electric-blue: #0099FF;\n  --bright-green: #13E296;\n  --light-gray: #F5F7FA;\n  --medium-gray: #6C7A88;\n  --dark-gray: #323232;\n  --white: #ffffff;\n  --black: #161616;\n  --multiple: 8;\n}\n"]}

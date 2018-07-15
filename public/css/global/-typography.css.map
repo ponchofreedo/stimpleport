@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"-typography.css","sourcesContent":[]}
+{"version":3,"sources":["css/global/-typography.css"],"names":[],"mappings":"AAAA,0BAA0B","file":"-typography.css","sourcesContent":["/* GLOBAL -- typography */\n:root {\n}\n"]}
