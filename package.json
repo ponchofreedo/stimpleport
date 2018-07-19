@@ -35,6 +35,7 @@
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^2.0.0",
+    "panini": "^1.6.2",
     "postcss": "^6.0.22",
     "postcss-advanced-variables": "^2.3.3",
     "postcss-apply": "^0.10.0",

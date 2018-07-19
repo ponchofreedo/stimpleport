@@ -3,27 +3,17 @@
 }
 
 .container {
-  display: grid;
-  grid-gap: calc(var(--multiple) * 8px);
-  grid-template-areas:
-    "nav"
-    "header"
-    "body"
-    "footer";
-}
-
-.nav {
-  grid-area: nav;
+  display: flex;
 }
 
 .header {
-  grid-area: header;
 }
 
 .content {
-  grid-area: body;
+}
+
+.more-info {
 }
 
 .footer {
-  grid-area: footer;
 }

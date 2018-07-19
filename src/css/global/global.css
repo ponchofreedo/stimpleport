@@ -3,3 +3,9 @@
 @import "-settings.css";
 @import "-typography.css";
 @import "-colors.css";
+
+body {
+  font-family: var(--base-font-family);
+  line-height: var(--default-line-height);
+  color: var(--darkest-gray);
+}

@@ -1,3 +1,7 @@
 /* GLOBAL -- reset */
 :root {
 }
+
+body {
+  margin: 0;
+}
