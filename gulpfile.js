@@ -8,6 +8,7 @@ const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync').create();
 const runSequence = require('run-sequence');
 const wiredep = require('wiredep').stream;
+const panini = require('panini');
 
 const postcss = require('gulp-postcss');
 const advancedVars = require('postcss-advanced-variables');
@@ -21,10 +22,8 @@ const presetEnv = require('postcss-preset-env');
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
-
-
 // to switch between src and public
-// let dev = true;
+let dev = true;
 
 gulp.task('scripts', function () {
 });
@@ -40,7 +39,7 @@ gulp.task('postcss', function (cb) {
         'skipDuplicates': true
       }),
       apply({
-        preserve: false
+        preserve: true
       }),
       nestedProps(),
       presetEnv({
@@ -52,13 +51,13 @@ gulp.task('postcss', function (cb) {
         stage: 3,
         features: {
           'custom-properties': {
-            preserve: false,
+            preserve: true,
             warnings: true
           },
           'nesting-rules': true
         },
         autoprefixer: ({
-          grid: true
+          grid: false
         })
       }),
       calc({
@@ -71,15 +70,16 @@ gulp.task('postcss', function (cb) {
       })
     ]))
     .pipe($.if(dev, $.sourcemaps.write('.')))
-    .pipe(gulp.dest('.tmp/styles'))
+    .pipe(gulp.dest('.tmp/'))
     .pipe($.size({ title : 'css' }))
-    .pipe(reload({stream: true}));
+    .pipe(reload({ stream: true }));
 });
 
 gulp.task('html', function () {
-  return gulp.src('src/**/*.html')
-    .pipe(gulp.dest('public/'))
-    .pipe($.size({ title : 'html' }));
+  return gulp.src('src/*.html')
+    .pipe(gulp.dest('public'))
+    .pipe($.size({ title : 'html' }))
+    .pipe(reload({ stream: true }));
 });
 
 gulp.task('images', function (cb) {
@@ -97,20 +97,25 @@ gulp.task('clean', function () {
 gulp.task('watch', function () {
 });
 
-// just test to make sure the file is alive
-gulp.task('default', function () {
-  runSequence('postcss')
-});
-
 // spin a server
 gulp.task('serve', function () {
   browserSync.init({
     notify: false,
     port: 9000,
-    server: {
-      baseDir: ['public']
-    }
+    server: ['src']
   });
+
+  gulp.watch([
+    'src/**/*.html',
+    'src/img/**/*',
+  ]).on('change', reload);
+
+  gulp.watch('src/css/**/*.css', ['postcss']);
+});
+
+// just test to make sure the file is alive
+gulp.task('default', function () {
+  runSequence('serve', 'html')
 });
 
 // put a bow on it
