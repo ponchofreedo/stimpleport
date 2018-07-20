@@ -51,10 +51,10 @@ gulp.task('postcss', function (cb) {
         stage: 3,
         features: {
           'custom-properties': {
-            preserve: true,
+            preserve: false,
             warnings: true
           },
-          'nesting-rules': true
+          'nesting-rules': false
         },
         autoprefixer: ({
           grid: false
@@ -62,12 +62,12 @@ gulp.task('postcss', function (cb) {
       }),
       calc({
         warnWhenCannotResolve: true
-      }),
+      })/*,
       cssnano({
         autoprefixer: false,
         preset: 'default',
         safe: true
-      })
+      })*/
     ]))
     .pipe($.if(dev, $.sourcemaps.write('.')))
     .pipe(gulp.dest('.tmp/'))

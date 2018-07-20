@@ -7,6 +7,12 @@
 }
 
 .header {
+  padding-top: calc(var(--global-multiple) * 15px);
+  padding-bottom: calc(var(--global-multiple) * 10px);
+
+  @nest .h1 {
+    color: red;
+  }
 }
 
 .content {
