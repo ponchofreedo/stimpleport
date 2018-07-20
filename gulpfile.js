@@ -8,7 +8,6 @@ const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync').create();
 const runSequence = require('run-sequence');
 const wiredep = require('wiredep').stream;
-const panini = require('panini');
 
 const postcss = require('gulp-postcss');
 const advancedVars = require('postcss-advanced-variables');
@@ -31,48 +30,17 @@ gulp.task('scripts', function () {
 gulp.task('gzip', function() {
 });
 
-gulp.task('postcss', function (cb) {
-  return gulp.src('src/**/*.css')
+gulp.task('sass', () => {
+  return gulp.src('src/**/*.scss')
     .pipe($.if(dev, $.sourcemaps.init()))
-    .pipe(postcss([
-      partials({
-        'skipDuplicates': true
-      }),
-      apply({
-        preserve: true
-      }),
-      nestedProps(),
-      presetEnv({
-        browsers: [
-          'last 2 versions',
-          'ie >= 8',
-          'dead'
-        ],
-        stage: 3,
-        features: {
-          'custom-properties': {
-            preserve: false,
-            warnings: true
-          },
-          'nesting-rules': false
-        },
-        autoprefixer: ({
-          grid: false
-        })
-      }),
-      calc({
-        warnWhenCannotResolve: true
-      })/*,
-      cssnano({
-        autoprefixer: false,
-        preset: 'default',
-        safe: true
-      })*/
-    ]))
-    .pipe($.if(dev, $.sourcemaps.write('.')))
+    .pipe($.sass.sync({
+      outputStyle: 'expanded',
+      precision: 10,
+      includePaths: ['.']
+    }).on('error', $.sass.logError))
+    .pipe($.size({ title : 'sass' }))
     .pipe(gulp.dest('.tmp/'))
-    .pipe($.size({ title : 'css' }))
-    .pipe(reload({ stream: true }));
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('html', function () {
@@ -102,7 +70,7 @@ gulp.task('serve', function () {
   browserSync.init({
     notify: false,
     port: 9000,
-    server: ['src']
+    server: ['.tmp', 'src']
   });
 
   gulp.watch([
@@ -110,7 +78,7 @@ gulp.task('serve', function () {
     'src/img/**/*',
   ]).on('change', reload);
 
-  gulp.watch('src/css/**/*.css', ['postcss']);
+  gulp.watch('src/**/*.scss', ['sass']);
 });
 
 // just test to make sure the file is alive

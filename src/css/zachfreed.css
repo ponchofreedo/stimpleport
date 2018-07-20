@@ -1,4 +1,4 @@
-@import "./global/global.css";
-@import "./helpers/helpers.css";
-@import "./layout/layout.css";
-@import "./pages/pages.css";
+@import "./global/global";
+@import "./helpers/helpers";
+@import "./layout/layout";
+@import "./pages/pages";

@@ -1,16 +1,13 @@
 /* LAYOUT -- master */
-:root {
-}
-
 .container {
   display: flex;
 }
 
 .header {
-  padding-top: calc(var(--global-multiple) * 15px);
-  padding-bottom: calc(var(--global-multiple) * 10px);
+  padding-top: calc($global-multiple * 15px);
+  padding-bottom: calc($global-multiple * 10px);
 
-  @nest .h1 {
+  h1 {
     color: red;
   }
 }
