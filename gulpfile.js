@@ -8,15 +8,7 @@ const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync').create();
 const runSequence = require('run-sequence');
 const wiredep = require('wiredep').stream;
-
-const postcss = require('gulp-postcss');
-const advancedVars = require('postcss-advanced-variables');
-const apply = require('postcss-apply');
-const calc = require('postcss-calc');
-const partials = require('postcss-import');
 const cssnano = require('cssnano');
-const nestedProps = require('postcss-nested-props');
-const presetEnv = require('postcss-preset-env');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -24,14 +16,11 @@ const reload = browserSync.reload;
 // to switch between src and public
 let dev = true;
 
-gulp.task('scripts', function () {
-});
-
 gulp.task('gzip', function() {
 });
 
-gulp.task('sass', () => {
-  return gulp.src('src/**/*.scss')
+gulp.task('sass', function () {
+  return gulp.src('src/css/*.scss')
     .pipe($.if(dev, $.sourcemaps.init()))
     .pipe($.sass.sync({
       outputStyle: 'expanded',
@@ -39,7 +28,7 @@ gulp.task('sass', () => {
       includePaths: ['.']
     }).on('error', $.sass.logError))
     .pipe($.size({ title : 'sass' }))
-    .pipe(gulp.dest('.tmp/'))
+    .pipe(gulp.dest('.tmp/css'))
     .pipe(reload({stream: true}));
 });
 
@@ -47,7 +36,6 @@ gulp.task('html', function () {
   return gulp.src('src/*.html')
     .pipe(gulp.dest('public'))
     .pipe($.size({ title : 'html' }))
-    .pipe(reload({ stream: true }));
 });
 
 gulp.task('images', function (cb) {
@@ -65,6 +53,22 @@ gulp.task('clean', function () {
 gulp.task('watch', function () {
 });
 
+gulp.task('scripts', () => {
+  return gulp.src('src/scripts/**/*.js')
+    .pipe($.if(dev, $.sourcemaps.init()))
+    .pipe(gulp.dest('.tmp/scripts'))
+    .pipe(reload({stream: true}));
+});
+
+gulp.task('extras', () => {
+  return gulp.src([
+    'src/*',
+    '!src/*.html'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('public'));
+});
+
 // spin a server
 gulp.task('serve', function () {
   browserSync.init({
@@ -74,15 +78,17 @@ gulp.task('serve', function () {
   });
 
   gulp.watch([
-    'src/**/*.html',
+    'src/*.html',
     'src/img/**/*',
   ]).on('change', reload);
 
-  gulp.watch('src/**/*.scss', ['sass']);
+  gulp.watch('src/css/**/*.scss', ['sass']);
+  gulp.watch('src/scripts/**/*.js', ['scripts']);
 });
 
 // just test to make sure the file is alive
 gulp.task('default', function () {
+  dev = false;
   runSequence('serve', 'html')
 });
 

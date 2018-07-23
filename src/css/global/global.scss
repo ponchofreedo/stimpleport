@@ -4,8 +4,20 @@
 @import "-typography";
 @import "-colors";
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-size: 62.5%
+}
+
 body {
   font-family: $base-font-family;
+  font-size: 1.6rem;
   line-height: $default-line-height;
   color: $darkest-gray;
 }

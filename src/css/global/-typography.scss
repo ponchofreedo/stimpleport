@@ -1,5 +1,5 @@
 /* GLOBAL -- typography */
-$default-line-height: 1.44;
+$default-line-height: 1.4;
 $base-font-family: 'Aktiv-Grotesk', 'system-ui', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
 $txt-xbold: 800;
 $txt-bold: 700;
@@ -22,14 +22,42 @@ span {
 }
 
 h1 {
-  font-size: 82px;
+  font-size: 8.2rem;
   font-weight: $txt-bold;
+  line-height: 1.1;
+  letter-spacing: -0.32rem;
 }
 
 h2 {
+  font-size: 4.8rem;
   font-weight: $txt-medium;
+  line-height: 1.24;
+  letter-spacing: -0.16rem;
 }
 
 h3 {
+  font-size: 3.2rem;
   font-weight: $txt-bold;
+  line-height: 1.1;
+  letter-spacing: -0.12rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+  font-weight: $txt-regular;
+  line-height: 1.24;
+  letter-spacing: -0.08rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: $txt-regular;
+  line-height: 1.0;
+  letter-spacing: -0.024rem;
+}
+
+p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  hyphens: none;
 }

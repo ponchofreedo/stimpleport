@@ -1,22 +1,79 @@
 /* LAYOUT -- master */
 .container {
-  display: flex;
+  padding: 16px 0 0 16px;
+  width: 100%;
+
+  @media only screen and (max-width: 540px) {
+    padding: 0;
+  }
+
+  &__padded {
+    padding-right: 16%;
+
+    @media only screen and (max-width: 540px) {
+      padding-right: 1.6rem;
+    }
+  }
+}
+
+.push {
+  padding-left: 24%;
+
+  @media only screen and (max-width: 540px) {
+      padding: 0 1.6rem;
+  }
+}
+
+.layout {
+  min-width: 32rem;
+
+  &-sm {
+    max-width: 80%;
+
+    @media only screen and (max-width: 540px) {
+      max-width: 75%;
+    }
+  }
+
+  &-bg {
+    max-width: 120rem;
+
+    @media only screen and (max-width: 540px) {
+      max-width: 100%;
+    }
+  }
+}
+
+header,
+section,
+article,
+footer {
+  display: block;
+}
+
+.header,
+.content,
+.footer {
+  padding-bottom: $global-multiple * 10px;
 }
 
 .header {
-  padding-top: calc($global-multiple * 15px);
-  padding-bottom: calc($global-multiple * 10px);
-
-  h1 {
-    color: red;
-  }
+  padding-top: $global-multiple * 30px;
+  margin-bottom: $global-multiple * 10px;
 }
 
 .content {
 }
 
-.more-info {
+.experience {
+  padding-bottom: $global-multiple * 15px;
 }
 
 .footer {
+  border-bottom: 16px solid $primary;
+  border-right: 16px solid $primary;
+
+  h3 {
+    color: $primary;
+  }
 }
