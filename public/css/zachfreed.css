@@ -1,0 +1,40 @@
+/* GLOBAL -- master */
+/* GLOBAL -- reset */
+/* GLOBAL -- vars */
+/* GLOBAL -- typography */
+/* GLOBAL -- colors */
+/* HELPERS -- master */
+/* LAYOUT -- master */
+.container {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 64px;
+      grid-template-areas:
+    "nav"
+    "header"
+    "body"
+    "footer";
+}
+.nav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: nav;
+}
+.header {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: header;
+}
+.content {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: body;
+}
+.footer {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: footer;
+}
+/* PAGES -- master */
+
+/*# sourceMappingURL=zachfreed.css.map */
