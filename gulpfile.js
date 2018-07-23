@@ -8,16 +8,7 @@ const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync').create();
 const runSequence = require('run-sequence');
 const wiredep = require('wiredep').stream;
-const panini = require('panini');
-
-const postcss = require('gulp-postcss');
-const advancedVars = require('postcss-advanced-variables');
-const apply = require('postcss-apply');
-const calc = require('postcss-calc');
-const partials = require('postcss-import');
 const cssnano = require('cssnano');
-const nestedProps = require('postcss-nested-props');
-const presetEnv = require('postcss-preset-env');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -25,61 +16,26 @@ const reload = browserSync.reload;
 // to switch between src and public
 let dev = true;
 
-gulp.task('scripts', function () {
-});
-
 gulp.task('gzip', function() {
 });
 
-gulp.task('postcss', function (cb) {
-  return gulp.src('src/**/*.css')
+gulp.task('sass', function () {
+  return gulp.src('src/css/*.scss')
     .pipe($.if(dev, $.sourcemaps.init()))
-    .pipe(postcss([
-      partials({
-        'skipDuplicates': true
-      }),
-      apply({
-        preserve: true
-      }),
-      nestedProps(),
-      presetEnv({
-        browsers: [
-          'last 2 versions',
-          'ie >= 8',
-          'dead'
-        ],
-        stage: 3,
-        features: {
-          'custom-properties': {
-            preserve: true,
-            warnings: true
-          },
-          'nesting-rules': true
-        },
-        autoprefixer: ({
-          grid: false
-        })
-      }),
-      calc({
-        warnWhenCannotResolve: true
-      }),
-      cssnano({
-        autoprefixer: false,
-        preset: 'default',
-        safe: true
-      })
-    ]))
-    .pipe($.if(dev, $.sourcemaps.write('.')))
-    .pipe(gulp.dest('.tmp/'))
-    .pipe($.size({ title : 'css' }))
-    .pipe(reload({ stream: true }));
+    .pipe($.sass.sync({
+      outputStyle: 'expanded',
+      precision: 10,
+      includePaths: ['.']
+    }).on('error', $.sass.logError))
+    .pipe($.size({ title : 'sass' }))
+    .pipe(gulp.dest('.tmp/css'))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('html', function () {
   return gulp.src('src/*.html')
     .pipe(gulp.dest('public'))
     .pipe($.size({ title : 'html' }))
-    .pipe(reload({ stream: true }));
 });
 
 gulp.task('images', function (cb) {
@@ -97,24 +53,42 @@ gulp.task('clean', function () {
 gulp.task('watch', function () {
 });
 
+gulp.task('scripts', () => {
+  return gulp.src('src/scripts/**/*.js')
+    .pipe($.if(dev, $.sourcemaps.init()))
+    .pipe(gulp.dest('.tmp/scripts'))
+    .pipe(reload({stream: true}));
+});
+
+gulp.task('extras', () => {
+  return gulp.src([
+    'src/*',
+    '!src/*.html'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('public'));
+});
+
 // spin a server
 gulp.task('serve', function () {
   browserSync.init({
     notify: false,
     port: 9000,
-    server: ['src']
+    server: ['.tmp', 'src']
   });
 
   gulp.watch([
-    'src/**/*.html',
+    'src/*.html',
     'src/img/**/*',
   ]).on('change', reload);
 
-  gulp.watch('src/css/**/*.css', ['postcss']);
+  gulp.watch('src/css/**/*.scss', ['sass']);
+  gulp.watch('src/scripts/**/*.js', ['scripts']);
 });
 
 // just test to make sure the file is alive
 gulp.task('default', function () {
+  dev = false;
   runSequence('serve', 'html')
 });
 
