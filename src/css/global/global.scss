@@ -1,23 +1,5 @@
-/* GLOBAL -- master */
-@import "-reset";
-@import "-settings";
-@import "-typography";
-@import "-colors";
+@import "_reset";
+@import "_typography";
+@import "_links";
+@import "_skeleton";
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-size: 62.5%
-}
-
-body {
-  font-family: $base-font-family;
-  font-size: 1.6rem;
-  line-height: $default-line-height;
-  color: $darkest-gray;
-}

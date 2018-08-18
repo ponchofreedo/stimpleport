@@ -1,0 +1,14 @@
+@mixin strikethrough($cursor, $color) {
+  &:hover {
+    cursor: $cursor;
+
+    &::after {
+      content: '';
+      border-bottom: 0.4rem solid $color;
+      width: 100%;
+      position: absolute;
+      right: 0;
+      top: 50%;
+    }
+  }
+}

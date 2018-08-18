@@ -19,7 +19,7 @@ let dev = true;
 gulp.task('gzip', function() {
 });
 
-gulp.task('sass', function () {
+gulp.task('sass', () => {
   return gulp.src('src/css/*.scss')
     .pipe($.if(dev, $.sourcemaps.init()))
     .pipe($.sass.sync({
@@ -32,25 +32,25 @@ gulp.task('sass', function () {
     .pipe(reload({stream: true}));
 });
 
-gulp.task('html', function () {
+gulp.task('html', () => {
   return gulp.src('src/*.html')
     .pipe(gulp.dest('public'))
     .pipe($.size({ title : 'html' }))
 });
 
 gulp.task('images', function (cb) {
+  return gulp.src('src/img/**/*.{png,jpg,svg,jpeg,gif,ico}')
+    .pipe($.size({ title : 'images' }))
+    .pipe(gulp.dest('.tmp/img'));
 });
 
-gulp.task('fonts', function () {
+gulp.task('test', () => {
 });
 
-gulp.task('test', function () {
+gulp.task('clean', () => {
 });
 
-gulp.task('clean', function () {
-});
-
-gulp.task('watch', function () {
+gulp.task('watch', () => {
 });
 
 gulp.task('scripts', () => {
@@ -70,7 +70,7 @@ gulp.task('extras', () => {
 });
 
 // spin a server
-gulp.task('serve', function () {
+gulp.task('serve', () => {
   browserSync.init({
     notify: false,
     port: 9000,
@@ -79,21 +79,21 @@ gulp.task('serve', function () {
 
   gulp.watch([
     'src/*.html',
-    'src/img/**/*',
   ]).on('change', reload);
 
   gulp.watch('src/css/**/*.scss', ['sass']);
   gulp.watch('src/scripts/**/*.js', ['scripts']);
+  gulp.watch('src/css/img/**/*.{png,jpg,svg,jpeg,gif,ico}', ['images']);
 });
 
 // just test to make sure the file is alive
-gulp.task('default', function () {
+gulp.task('default', () => {
   dev = false;
   runSequence('serve', 'html')
 });
 
 // put a bow on it
-gulp.task('build', function () {
+gulp.task('build', () => {
 });
 
 // ['build', 'watch']

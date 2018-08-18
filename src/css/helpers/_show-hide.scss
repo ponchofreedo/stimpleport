@@ -1,0 +1,14 @@
+.u-h--mobile,
+%u-h--mobile {
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+%u-s--mobile {
+  display: none;
+
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
+}
