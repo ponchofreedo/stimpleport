@@ -1,0 +1,124 @@
+.lefty {
+
+  &__content {
+    background-color: $c--primary;
+    position: relative;
+  }
+
+  h1 {
+    color: $c--dk-primary;
+  }
+
+  .content__list,
+  .social__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content__list {
+    margin-top: 0;
+    margin-bottom: 4.8rem;
+
+    @media screen and (max-width: 1023px) {
+      margin-bottom: 0;
+    }
+
+    .dats-the-facts {
+      list-style: none;
+      margin-top: 2.4rem;
+      font-size: 3.2rem;
+      line-height: 1.4;
+      font-weight: $t--bold;
+      color: $c--white;
+      letter-spacing: -0.08rem;
+      text-align: left;
+
+      @media screen and (max-width: 359px) {
+        font-size: 2.4rem;
+      }
+
+      li {
+
+        span {
+          position: relative;
+
+          @include strikethrough(default, $c--primary);
+        }
+      }
+    }
+  }
+
+  .social__list {
+    position: absolute;
+    bottom: 9.6rem;
+
+    @media screen and (max-width: 1023px) {
+      position: relative;
+      bottom: 0;
+      margin-top: 4.8rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      line-height: 1.0;
+      margin-top: 1.6rem;
+
+      li {
+        display: inline-block;
+        float: left;
+        margin: 0;
+        padding: 0;
+        height: 1.8rem;
+      }
+    }
+
+    a {
+      vertical-align: top;
+      position: relative;
+
+      @include strikethrough(pointer, $c--primary);
+    }
+
+    [class*="social--"] {
+      svg {
+        height: 1.8rem;
+        width: auto;
+        vertical-align: bottom;
+        margin-right: 2.4rem;
+
+        @media screen and (max-width: 479px) {
+          margin-right: 2rem;
+        }
+
+        path {
+          fill: $c--dk-primary;
+          vertical-align: bottom;
+        }
+      }
+    }
+  }
+
+  .dats-my-face,
+  .dats-my-face-on-mobile {
+    height: 8rem;
+    width: 8rem;
+  }
+
+  .dats-my-face {
+    @extend %u-h--mobile;
+    margin-bottom: 3.2rem;
+  }
+
+  .dats-my-face-on-mobile {
+    @extend %u-s--mobile;
+    margin-bottom: 1.6rem;
+  }
+
+  .dats-my-name,
+  .dats-the-facts {
+    display: block;
+    width: 100%;
+  }
+}

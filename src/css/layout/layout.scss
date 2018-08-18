@@ -1,79 +1,77 @@
-/* LAYOUT -- master */
-.container {
-  padding: 16px 0 0 16px;
-  width: 100%;
-
-  @media only screen and (max-width: 540px) {
-    padding: 0;
-  }
-
-  &__padded {
-    padding-right: 16%;
-
-    @media only screen and (max-width: 540px) {
-      padding-right: 1.6rem;
-    }
-  }
-}
-
-.push {
-  padding-left: 24%;
-
-  @media only screen and (max-width: 540px) {
-      padding: 0 1.6rem;
-  }
-}
-
-.layout {
-  min-width: 32rem;
-
-  &-sm {
-    max-width: 80%;
-
-    @media only screen and (max-width: 540px) {
-      max-width: 75%;
-    }
-  }
-
-  &-bg {
-    max-width: 120rem;
-
-    @media only screen and (max-width: 540px) {
-      max-width: 100%;
-    }
-  }
-}
-
 header,
+nav,
 section,
+aside,
 article,
 footer {
-  display: block;
+  display: inherit;
 }
 
-.header,
-.content,
-.footer {
-  padding-bottom: $global-multiple * 10px;
-}
+.container {
+  display: grid;
+  max-width: 192rem;
+  margin: 0 auto;
 
-.header {
-  padding-top: $global-multiple * 30px;
-  margin-bottom: $global-multiple * 10px;
-}
-
-.content {
-}
-
-.experience {
-  padding-bottom: $global-multiple * 15px;
-}
-
-.footer {
-  border-bottom: 16px solid $primary;
-  border-right: 16px solid $primary;
-
-  h3 {
-    color: $primary;
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
   }
 }
+
+.lefty,
+.righty {
+  padding-top: ($global-multiple * 6rem) / 10;
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  flex: 1;
+  //@include clearfix;
+
+  &__content {
+    height: 100%;
+    padding: ($global-multiple * 12rem) / 10;
+
+    @media screen and (max-width: 1023px) {
+      padding: 10%;
+    }
+
+    @media screen and (max-width: 479px) {
+      padding: (($global-multiple * 12rem) / 10) (($global-multiple * 2rem) / 10) (($global-multiple * 6rem) / 10);
+    }
+  }
+}
+
+.lefty {
+  height: auto;
+  position: static;
+  justify-content: stretch;
+
+  @media screen and (max-width: 1023px) {
+    padding-top: ($global-multiple * 1rem) / 10;
+  }
+
+  &__container {
+    left: 0;
+
+    @media screen and (min-width: 1024px) {
+      height: calc(100vh);
+      position: sticky;
+      top: 0;
+    }
+  }
+}
+
+.righty {
+
+  @media screen and (max-width: 1023px) {
+    padding-top: ($global-multiple * 1rem) / 10;
+  }
+
+  &__container {
+    right: 0;
+    position: relative;
+  }
+}
+
+@import "_footer";
