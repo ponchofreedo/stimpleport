@@ -90,6 +90,21 @@
         }
       }
 
+      a {
+        display: block;
+
+        &:hover {
+          h1,
+          h3 {
+            color: $c--primary;
+          }
+
+          p {
+            color: $c--lt-gray;
+          }
+        }
+      }
+
       h1 {
         color: $c--dk-gray;
       }
@@ -100,7 +115,7 @@
         color: $c--dk-gray;
         margin-top: 1.2rem;
 
-        @include strikethrough(pointer, $c--dk-gray);
+        @include strikethrough(pointer, $c--primary);
       }
 
       p {
