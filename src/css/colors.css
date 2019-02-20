@@ -1,10 +1,10 @@
 :root {
-  --dodger: #0099FF;
-  --navy: #18252D;
-  --white: #FFF;
-  --ghost: #FAFAFF;
-  --steel: #727A81;
-  --black: #323232;
+  --c--dodger: #0099FF;
+  --c--navy: #18252D;
+  --c--white: #FFF;
+  --c--ghost: #FAFAFF;
+  --c--steel: #727A81;
+  --c--black: #323232;
   --brand--pcln: #007AFF;
   --brand--tntr: #F46420;
   --brand--stmp: #30CFD0;

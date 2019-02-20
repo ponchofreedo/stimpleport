@@ -1,0 +1,29 @@
+:root {
+  --base-font-family: 'Aktiv-Grotesk', 'system-ui', -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
+  --base-font-weight: 400;
+  --base-font-size: 1.6rem;
+  --base-line-height: 1.625;
+  --t-w--bold: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+h1 {
+  font-size: 9.6rem;
+  line-height: 1.0;
+  font-weight: var(--t-w--bold, bold);
+  letter-spacing: -0.2rem;
+}
