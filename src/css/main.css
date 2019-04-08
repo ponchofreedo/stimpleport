@@ -1,34 +1,6 @@
 @import "normalize.css";
 @import "colors.css";
+@import "skeleton.css";
 @import "typography.css";
+@import "links.css";
 @import "layout.css";
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-size: 62.5%;
-}
-
-body {
-  font-family: var(--base-font-family);
-  font-weight: var(--base-font-weight);
-  font-size: var(--base-font-size);
-  line-height: var(--base-line-height);
-  min-height: 100vh;
-  margin: 0;
-}
-
-body.dark-mode {
-  background-color: var(--c--navy);
-  color: var(--c--ghost);
-}
-
-body.light-mode {
-  background-color: var(--c--white);
-  color: var(--c--black);
-}

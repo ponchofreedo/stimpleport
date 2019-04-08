@@ -4,7 +4,7 @@
   "description": "2019 portfolio",
   "main": "gulpfile.js",
   "scripts": {
-    "postcss": "postcss -o public/css/cssnano.css src/css/cssnano.css",
+    "start": "gulp serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,1 +1,3 @@
-console.log("im working");
+"use strict"
+
+console.log("im working")

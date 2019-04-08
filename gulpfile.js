@@ -57,7 +57,7 @@ gulp.task('html', () => {
     .pipe($.if('*.html', $.htmlmin({
       collapseWhitespace: true,
       minifyCSS: true,
-      minifyJS: {compress: {drop_console: true}},
+      minifyJS: {compress: { drop_console: true }},
       processConditionalComments: true,
       removeComments: true,
       removeEmptyAttributes: true,
@@ -86,7 +86,7 @@ gulp.task('scripts', () => {
 
 // spin a server
 gulp.task('serve', () => {
-  runSequence(['styles', 'scripts', 'images'], () => {
+  runSequence(['html', 'styles', 'scripts', 'images'], () => {
     browserSync.init({
       notify: false,
       port: 9000,

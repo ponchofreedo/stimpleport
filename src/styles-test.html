@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Styles playground</title>
+
+    <base href="/">
+
+    <script>
+      (function(d) { var config = { kitId: 'dqe6uhi', scriptTimeout: 3000, async: true },h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)})(document);
+    </script>
+
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endbuild -->
+  </head>
+  <body class="dark-mode">
+    <main class="container">
+      <header class="header header--free">
+        <nav class="nav nav__primary">
+          <a href="/">Zach Freed // Designer</a>
+          <ul>
+            <li><a href="/projects/">Projects.</a></li>
+            <li><a href="/about/">Need to know.</a></li>
+            <li><a href="/say-hello/">Say hello.</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="container">
+        <h1>H1<span>.</span></h1>
+        <h2>H2<span>.</span></h2>
+        <h3>H3<span>.</span></h3>
+        <h4>H4</h4>
+        <h5>H5</h5>
+        <h6>H6</h6>
+        <p>I’m a paragraph.</p>
+        <p>And I'm a paragraph next to another paragraph.</p>
+        <p>I'm an <a href="#" target="_blank">inline link</a>.</p>
+        <small class="t-color--ghost u-color--trans">I'm a small tag.</small>
+      </section>
+    </main>
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- build:js scripts/main.js -->
+  </body>
+</html>
