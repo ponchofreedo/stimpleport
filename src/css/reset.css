@@ -23,37 +23,26 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-
 /* HTML5 display-role reset for older browsers */
-
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-
 body {
 	line-height: 1;
 }
-
 ol, ul {
 	list-style: none;
 }
-
 blockquote, q {
 	quotes: none;
 }
-
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
-
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-:root{--dodger:#09f;--navy:#18252d;--white:#fff;--ghost:#fafaff;--steel:#727a81;--black:#323232;--brand--pcln:#007aff;--brand--tntr:#f46420;--brand--stmp:#30cfd0;--base-multiple:8}
-
-html{color:#000}

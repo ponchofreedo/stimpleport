@@ -1,0 +1,9 @@
+[class^=col--] {
+  display: flex;
+  flex: inherit;
+  justify-content: start;
+}
+
+.col--full {
+  flex: 1;
+}

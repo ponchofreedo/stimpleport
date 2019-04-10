@@ -1,0 +1,100 @@
+.nav {
+  display: inherit;
+}
+
+.nav__container {
+  display: flex;
+}
+
+.nav--primary {
+  flex: 1;
+}
+
+.nav__links {
+  flex: 1;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.nav__link svg {
+  height: 0.8em;
+  width: 0.8em;
+  margin-left: 0.5em;
+  fill: var(--c--primary);
+}
+
+.nav__link:not(.nav__link--home) {
+  flex: auto;
+  text-align: right;
+}
+
+.nav__link a {
+  vertical-align: top;
+}
+
+.nav__link.nav__link--home {
+  text-align: left;
+}
+
+
+.nav__link.nav__link--home a {
+  color: var(--c--white);
+}
+
+@media screen and (min-width: 320px) {
+
+  .nav--primary {
+    margin: 2em 0 8em;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 2em;
+    position: relative;
+    align-content: stretch;
+    font-size: 2.4em;
+  }
+
+  .nav__link {
+    flex-basis: 50%;
+  }
+
+  .nav__link:nth-child(n+2) {
+    position: absolute;
+    right: 0;
+    height: 2em;
+  }
+
+  .nav__link:nth-child(3) {
+    margin-top: 2.4em;
+  }
+
+  .nav__link:nth-child(4) {
+    margin-top: 4.8em;
+  }
+}
+
+@media screen and (min-width: 560px) {
+
+  .nav--primary {
+    margin: 3.2em 0 6.4em;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .nav__link {
+    font-size: 56%;
+    line-height: 1.6;
+    flex: 6;
+    align-self: flex-start !important;
+    position: initial !important;
+    height: auto;
+    margin: 0 !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}

@@ -11,31 +11,30 @@ const wiredep = require('wiredep').stream;
 const del = require('del');
 
 const postcss = require('gulp-postcss');
+// const atImport = require('postcss-import');
 const presetEnv = require('postcss-preset-env');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 // to switch between src and public
-let dev = true;
+let dev;
 
 gulp.task('gzip', function() {
 });
 
-gulp.task('sass', () => {
-  return gulp.src('src/css/*.scss')
-    .pipe($.if(dev, $.sourcemaps.init()))
-    .pipe($.sass.sync({
-      outputStyle: 'expanded',
-      precision: 10,
-      includePaths: ['.']
-    }).on('error', $.sass.logError))
-    .pipe($.if(dev, $.sourcemaps.write()))
+gulp.task('styles', () => {
+  return gulp.src('src/css/*.css')
+    .pipe($.if(dev, $.sourcemaps.init(), $.sourcemaps.write()))
+    .pipe($.plumber())
     .pipe($.cssnano({
       preset: 'default',
       safe: true
     }))
     .pipe(postcss([
+      /*atImport({
+        skipDuplicates: false
+      }),*/
       presetEnv({
         browsers: [
           'last 2 versions',
@@ -49,16 +48,16 @@ gulp.task('sass', () => {
       })
     ]))
     .pipe(gulp.dest('public/css'))
-    .pipe($.size({ title : 'sass' }))
+    .pipe($.size({ title : 'styles' }))
     .pipe(reload({stream: true}));
 });
 
 gulp.task('html', () => {
-  return gulp.src('src/*.html')
+  return gulp.src('src/**/*.html')
     .pipe($.if('*.html', $.htmlmin({
       collapseWhitespace: true,
       minifyCSS: true,
-      minifyJS: {compress: {drop_console: true}},
+      minifyJS: {compress: { drop_console: true }},
       processConditionalComments: true,
       removeComments: true,
       removeEmptyAttributes: true,
@@ -87,7 +86,7 @@ gulp.task('scripts', () => {
 
 // spin a server
 gulp.task('serve', () => {
-  runSequence(['sass', 'scripts', 'images'], () => {
+  runSequence(['html', 'styles', 'scripts', 'images'], () => {
     browserSync.init({
       notify: false,
       port: 9000,
@@ -99,7 +98,7 @@ gulp.task('serve', () => {
       'src/img/**/*'
     ]).on('change', reload);
 
-    gulp.watch('src/css/**/*.scss', ['sass']);
+    gulp.watch('src/css/**/*.css', ['styles']);
     gulp.watch('src/scripts/**/*.js', ['scripts']);
     gulp.watch('src/css/img/**/*.{png,jpg,svg,jpeg,gif,ico}', ['images']);
   });
@@ -112,7 +111,7 @@ gulp.task('default', () => {
 });
 
 // put a bow on it
-gulp.task('build', ['html', 'sass', 'images', 'scripts'], () => {
+gulp.task('build', ['html', 'styles', 'images', 'scripts'], () => {
   return gulp.src('src/**/*')
     .pipe($.size({ title: 'build' }));
 });
