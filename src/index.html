@@ -23,117 +23,108 @@
 
     <base href="/">
 
-    <script>
-      (function(d) { var config = { kitId: 'dqe6uhi', scriptTimeout: 3000, async: true },h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)})(document);
-    </script>
-
     <!--Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39509688-1"></script>
     <script>
       window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-39509688-1');
     </script>
 
-    <!-- build:css css/main.css -->
     <link rel="stylesheet" href="css/main.css">
-    <!-- endbuild -->
   </head>
   <body class="dark-mode">
-    <main class="container">
-      <header class="header header--free col--full">
-        <nav class="nav nav__primary">
-          <a href="/"><h4 class="thats-me">Zach Freed&nbsp;//<br />Designer</h4></a>
-          <ul>
-            <li><a href="/projects/"><h4>Projects</h4></a></li>
-            <li><a href="/about/"><h4>Need to know</h4></a></li>
-            <li><a href="/say-hello/"><h4>Say hello</h4></a></li>
+    <main class="main__container">
+      <header class="header header__container col--full">
+        <nav class="nav nav__container nav--primary">
+          <ul class="nav__links">
+            <li class="nav__link nav__link--home"><a href="https://zachfreed.com/"><span style="color: var(--c--primary)">Zach Freed</span>&ensp;//<br />Designer</a></li>
+            <li class="nav__link"><a href="/projects/">Projects.</a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 34 34"><path d="M34,17 C34,26.3891 26.3891,34 17,34 C7.6109,34 0,26.3891 0,17 C0,7.6109 7.6109,0 17,0 C26.3891,0 34,7.6109 34,17 Z M24,24 L24,10 L10,10 L10,14 L17,14 L8,23 L11,26 L20,17 L20,24 L24,24 Z"/></svg></li>
+            <li class="nav__link"><a href="/about/">Need to know.</a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 34 34"><path d="M34,17 C34,26.3891 26.3891,34 17,34 C7.6109,34 0,26.3891 0,17 C0,7.6109 7.6109,0 17,0 C26.3891,0 34,7.6109 34,17 Z M24,24 L24,10 L10,10 L10,14 L17,14 L8,23 L11,26 L20,17 L20,24 L24,24 Z"/></svg></li>
+            <li class="nav__link"><a href="/say-hello/">Say hello.</a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 34 34"><path d="M34,17 C34,26.3891 26.3891,34 17,34 C7.6109,34 0,26.3891 0,17 C0,7.6109 7.6109,0 17,0 C26.3891,0 34,7.6109 34,17 Z M24,24 L24,10 L10,10 L10,14 L17,14 L8,23 L11,26 L20,17 L20,24 L24,24 Z"/></svg></li>
           </ul>
         </nav>
       </header>
       <section class="opener col--full">
-        <h1 class="t-color--dodger">Whattup</h1>
+        <h1>Sup</h1>
         <p>I’m a product designer who focuses on crafting thoughtful and scalable systems, designing accessible experiences that center around real people, and authoring scalable CSS solutions for complex systems.</p>
-        <p>Currently a Senior Designer at <a href="https://tentrr.com" target="_blank">Tentrr</a> in New York City. Previously at <a href="https://priceline.com" target="_blank">priceline.com</a>.</p>
+        <p>Currently a Senior Designer making the outdoors accessible to everyone at <a href="https://tentrr.com" target="_blank">Tentrr</a> in New York City. Previously worked on awesome travel experiences at <a href="https://priceline.com" target="_blank">priceline.com</a>.</p>
       </section>
-      <footer class="footer footer__general col--full">
+      <footer class="footer footer__container col--full">
         <section class="footer__links-container">
-          <article>
+          <article class="footer__link-container">
             <a href="https://www.github.com/ponchofreedo/stimpleton/projects/">
-              <div>
-                <span>Projects.</span>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><polygon id="arrow-r-a" points="22 12 14 3.5 12 5.78 16.3 10.445 2 10.445 2 13.555 16.3 13.555 12 18.22 14 20.5"/></svg>
+              <div class="footer__link">
+                <h4>Projects</h4>
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"><path d="M34,17 C34,26.3891 26.3891,34 17,34 C7.6109,34 0,26.3891 0,17 C0,7.6109 7.6109,0 17,0 C26.3891,0 34,7.6109 34,17 Z M24,24 L24,10 L10,10 L10,14 L17,14 L8,23 L11,26 L20,17 L20,24 L24,24 Z"/></svg>
               </div>
               <span>Definitely should check those out.</span>
             </a>
           </article>
-          <article>
+          <article class="footer__link-container">
             <a href="/about/">
-              <div>
-                <span>Need to know.</span>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><polygon id="arrow-r-a" points="22 12 14 3.5 12 5.78 16.3 10.445 2 10.445 2 13.555 16.3 13.555 12 18.22 14 20.5"/></svg>
+              <div class="footer__link">
+                <h4>Need to know</h4>
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"><path d="M34,17 C34,26.3891 26.3891,34 17,34 C7.6109,34 0,26.3891 0,17 C0,7.6109 7.6109,0 17,0 C26.3891,0 34,7.6109 34,17 Z M24,24 L24,10 L10,10 L10,14 L17,14 L8,23 L11,26 L20,17 L20,24 L24,24 Z"/></svg>
               </div>
               <span>My way of saying, "get to know me."</span>
             </a>
           </article>
-          <article>
-            <a href="mailto:zach.freed@gmail.com?subject=whattup.">
-              <div>
-                <span>Say hello.</span>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><polygon id="arrow-r-a" points="22 12 14 3.5 12 5.78 16.3 10.445 2 10.445 2 13.555 16.3 13.555 12 18.22 14 20.5"/></svg>
+          <article class="footer__link-container">
+            <a href="mailto:zach.freed@gmail.com?subject=sup.">
+              <div class="footer__link">
+                <h4>Say hello</h4>
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"><path d="M34,17 C34,26.3891 26.3891,34 17,34 C7.6109,34 0,26.3891 0,17 C0,7.6109 7.6109,0 17,0 C26.3891,0 34,7.6109 34,17 Z M24,24 L24,10 L10,10 L10,14 L17,14 L8,23 L11,26 L20,17 L20,24 L24,24 Z"/></svg>
               </div>
               <span>Drop a line...I don't bite.</span>
             </a>
           </article>
-          <article>
+          <article class="footer__link-container">
             <a href="/pdf/zp__res--19.pdf">
-              <div>
-                <span>R&eacute;sum&eacute;.</span>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><polygon id="arrow-r-a" points="22 12 14 3.5 12 5.78 16.3 10.445 2 10.445 2 13.555 16.3 13.555 12 18.22 14 20.5"/></svg>
+              <div class="footer__link">
+                <h4>R&eacute;sum&eacute;</h4>
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"><path d="M34,17 C34,26.3891 26.3891,34 17,34 C7.6109,34 0,26.3891 0,17 C0,7.6109 7.6109,0 17,0 C26.3891,0 34,7.6109 34,17 Z M24,24 L24,10 L10,10 L10,14 L17,14 L8,23 L11,26 L20,17 L20,24 L24,24 Z"/></svg>
               </div>
               <span>I do have one of these, too.</span>
             </a>
           </article>
-          <article>
-            <div>
-              <span>Find me on them internets.</span>
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><polygon id="arrow-r-a" points="22 12 14 3.5 12 5.78 16.3 10.445 2 10.445 2 13.555 16.3 13.555 12 18.22 14 20.5"/></svg>
-            </div>
+          <article class="footer__link-container">
+            <h4>Find me on them internets</h4>
             <ul>
               <li>
                 <a href="https://www.dribbble.com/ponchofreedo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><polygon id="arrow-r-a" points="22 12 14 3.5 12 5.78 16.3 10.445 2 10.445 2 13.555 16.3 13.555 12 18.22 14 20.5"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"><path d="M34,17 C34,26.3891 26.3891,34 17,34 C7.6109,34 0,26.3891 0,17 C0,7.6109 7.6109,0 17,0 C26.3891,0 34,7.6109 34,17 Z M24,24 L24,10 L10,10 L10,14 L17,14 L8,23 L11,26 L20,17 L20,24 L24,24 Z"/></svg>
                 </a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/zpfreed">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><polygon id="arrow-r-a" points="22 12 14 3.5 12 5.78 16.3 10.445 2 10.445 2 13.555 16.3 13.555 12 18.22 14 20.5"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"><path d="M34,17 C34,26.3891 26.3891,34 17,34 C7.6109,34 0,26.3891 0,17 C0,7.6109 7.6109,0 17,0 C26.3891,0 34,7.6109 34,17 Z M24,24 L24,10 L10,10 L10,14 L17,14 L8,23 L11,26 L20,17 L20,24 L24,24 Z"/></svg>
                 </a>
               </li>
               <li>
                 <a href="https://www.instagram.com/ponchofreedo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><polygon id="arrow-r-a" points="22 12 14 3.5 12 5.78 16.3 10.445 2 10.445 2 13.555 16.3 13.555 12 18.22 14 20.5"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"><path d="M34,17 C34,26.3891 26.3891,34 17,34 C7.6109,34 0,26.3891 0,17 C0,7.6109 7.6109,0 17,0 C26.3891,0 34,7.6109 34,17 Z M24,24 L24,10 L10,10 L10,14 L17,14 L8,23 L11,26 L20,17 L20,24 L24,24 Z"/></svg>
                 </a>
               </li>
               <li>
                 <a href="https://www.github.com/ponchofreedo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><polygon id="arrow-r-a" points="22 12 14 3.5 12 5.78 16.3 10.445 2 10.445 2 13.555 16.3 13.555 12 18.22 14 20.5"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"><path d="M34,17 C34,26.3891 26.3891,34 17,34 C7.6109,34 0,26.3891 0,17 C0,7.6109 7.6109,0 17,0 C26.3891,0 34,7.6109 34,17 Z M24,24 L24,10 L10,10 L10,14 L17,14 L8,23 L11,26 L20,17 L20,24 L24,24 Z"/></svg>
                 </a>
               </li>
               <li>
                 <a href="https://www.twitter.com/ponchofreedo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><polygon id="arrow-r-a" points="22 12 14 3.5 12 5.78 16.3 10.445 2 10.445 2 13.555 16.3 13.555 12 18.22 14 20.5"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"><path d="M34,17 C34,26.3891 26.3891,34 17,34 C7.6109,34 0,26.3891 0,17 C0,7.6109 7.6109,0 17,0 C26.3891,0 34,7.6109 34,17 Z M24,24 L24,10 L10,10 L10,14 L17,14 L8,23 L11,26 L20,17 L20,24 L24,24 Z"/></svg>
                 </a>
               </li>
               <li>
                 <a href="https://www.behance.net/ponchofreedo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><polygon id="arrow-r-a" points="22 12 14 3.5 12 5.78 16.3 10.445 2 10.445 2 13.555 16.3 13.555 12 18.22 14 20.5"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"><path d="M34,17 C34,26.3891 26.3891,34 17,34 C7.6109,34 0,26.3891 0,17 C0,7.6109 7.6109,0 17,0 C26.3891,0 34,7.6109 34,17 Z M24,24 L24,10 L10,10 L10,14 L17,14 L8,23 L11,26 L20,17 L20,24 L24,24 Z"/></svg>
                 </a>
               </li>
             </ul>
           </article>
         </section>
         <section class="footer__bottom">
-          <div class="footer__colophon-title">Colophon:</div>
-          <div class="footer__colophon-content">Type set in <a href="https://www.daltonmaag.com/library/aktiv-grotesk">Aktiv Grotesk</a> by <a href="https://www.daltonmaag.com">Dalton Maag</a>. Authored in <a href="https://atom.io/">Atom</a>.</div>
+          <div class="footer__colophon-title">Colophon.</div>
+          <div class="footer__colophon-content">Type set in <a href="https://public-sans.digital.gov/" target="blank">Public Sans</a> developed by <a href="https://v2.designsystem.digital.gov/" target="_blank">USWDS</a>. Authored in <a href="https://atom.io/" target="_blank">Atom</a>.</div>
           <div class="footer__copyright">&copy; Zach Freed 2019.</div>
         </section>
       </footer>

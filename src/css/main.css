@@ -1,6 +1,4 @@
 @import "normalize.css";
-@import "colors.css";
-@import "skeleton.css";
-@import "typography.css";
-@import "links.css";
-@import "layout.css";
+@import "base/base.css";
+@import "components/components.css";
+@import "layout/layout.css";
