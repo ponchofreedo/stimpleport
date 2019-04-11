@@ -63,11 +63,11 @@ p a:focus::after,
   text-decoration-color: var(--c--primary);
 }
 
-.footer__link-container .footer__social-link svg {
+.footer__link-container.footer__social-container svg {
   border-bottom: 2px solid transparent;
-  transition: ease border-bottom-color 0.08s,
+  transition: ease border-bottom-color 0.08s;
 }
 
-.footer__link-container .footer__social-link svg:hover {
+.footer__link-container.footer__social-container svg:hover {
   border-bottom-color: var(--c--primary);
 }
