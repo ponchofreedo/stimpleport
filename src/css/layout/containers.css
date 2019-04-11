@@ -1,7 +1,7 @@
 :root {
   --base-multiplier: 8;
   --max-container-width--super: 100%; /* super - maxw1440px */
-  --container-width--super: 80%;
+  --container-width--super: 82%;
   --container-font-size--super: 1em;
   --max-container-width--large: 1440px; /* large - minw1024px */
   --container-width--large: 84%;

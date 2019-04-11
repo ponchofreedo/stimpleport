@@ -5,12 +5,81 @@
 .footer__container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
-.footer__links-container,
 .footer__bottom {
   flex: 1;
-  font-size: 1.2em;
+  flex-direction: row;
+}
+
+.footer__links-container {
+  display: grid;
+  grid-template-areas:  "projects"
+                        "about"
+                        "contact"
+                        "resume"
+                        "social";
+  margin: 8em 0 12em;
+}
+
+.footer__link-container {
+  font-size: 1.32em;
+}
+
+/* define grid areas */
+.footer__link-container:nth-child(1) {
+  grid-area: projects;
+}
+
+.footer__link-container:nth-child(2) {
+  grid-area: about;
+}
+
+.footer__link-container:nth-child(3) {
+  grid-area: contact;
+}
+
+.footer__link-container:nth-child(4) {
+  grid-area: resume;
+}
+
+.footer__link-container:nth-child(5) {
+  grid-area: social;
+}
+
+.footer__link-container a span {
+  color: var(--c--white);
+  font-weight: var(--font-weight--normal, 400);
+}
+
+.footer__social-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__social-container h4 {
+  color: var(--c--primary);
+}
+
+.footer__social-links {
+  flex-direction: row;
+  margin-top: 0.64em;
+}
+
+.footer__social-link h4 {
+  display: inline-flex;
+  position: relative;
+  margin-bottom: 0.2em;
+}
+
+.footer__social-link svg {
+  margin-top: 0.1em;
+  margin-left: 0.6em;
+}
+
+.footer__social-container .footer__social-link svg:first-child {
+  margin-left: 0;
 }
 
 .footer__bottom {
@@ -22,9 +91,32 @@
 
 @media screen and (min-width: 320px) {
 
+  .footer__links-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 4em;
+  }
+
+  .footer__link-container a span {
+    font-size: 1.6em;
+  }
+
+  .footer__social-link {
+    flex: 12% 0 1;
+  }
+
+  .footer__social-link svg {
+    height: 3.2em;
+    width: 3.2em;
+  }
+
+  .footer__bottom {
+    font-size: 2em;
+  }
+
   .footer__bottom {
     flex-direction: column;
-    margin-bottom: 4em;
+    margin-bottom: 2em;
   }
 
   [class^="footer__colophon"],
@@ -45,8 +137,33 @@
 @media screen and (min-width: 560px) {
 
   .footer__bottom {
+    font-size: 1.2em;
+  }
+
+  .footer__social-link {
+    flex: 8% 0 1;
+  }
+
+  .footer__social-link svg {
+    height: 2em;
+    width: 2em;
+  }
+
+  .footer__links-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 2em;
+    grid-template-areas:  "projects about"
+                          "contact resume"
+                          "social social";
+  }
+
+  .footer__links-container:last-child {
+    grid-template-columns: 100%;
+  }
+
+  .footer__bottom {
     flex-direction: initial;
-    margin-bottom: 4em;
   }
 
   .footer__colophon-title {
@@ -64,6 +181,15 @@
 }
 
 @media screen and (min-width: 1024px) {
+
+  .footer__links-container {
+    font-size: 0.8em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 3.2em;
+    grid-template-areas:  "projects about contact"
+                          "resume social social";
+  }
 
 }
 
