@@ -24,7 +24,7 @@ gulp.task('gzip', function() {
 });
 
 gulp.task('styles', () => {
-  return gulp.src('src/css/*.css')
+  return gulp.src('src/css/**/*.css')
     .pipe($.if(dev, $.sourcemaps.init(), $.sourcemaps.write()))
     .pipe($.plumber())
     .pipe($.cssnano({
