@@ -13,6 +13,8 @@
   flex-direction: row;
 }
 
+/* apply this when the about section is done */
+/*
 .footer__links-container {
   display: grid;
   grid-template-areas:  "projects"
@@ -23,11 +25,6 @@
   margin: 8em 0 12em;
 }
 
-.footer__link-container {
-  font-size: 1.32em;
-}
-
-/* define grid areas */
 .footer__link-container:nth-child(1) {
   grid-area: projects;
 }
@@ -46,6 +43,37 @@
 
 .footer__link-container:nth-child(5) {
   grid-area: social;
+}
+*/
+
+/* remove when about is done */
+.footer__links-container {
+  display: grid;
+  grid-template-areas:  "projects"
+                        "contact"
+                        "resume"
+                        "social";
+  margin: 8em 0 12em;
+}
+
+.footer__link-container:nth-child(1) {
+  grid-area: projects;
+}
+
+.footer__link-container:nth-child(2) {
+  grid-area: contact;
+}
+
+.footer__link-container:nth-child(3) {
+  grid-area: resume;
+}
+
+.footer__link-container:nth-child(4) {
+  grid-area: social;
+}
+
+.footer__link-container {
+  font-size: 1.32em;
 }
 
 .footer__link-container a span {
@@ -149,6 +177,8 @@
     width: 2em;
   }
 
+  /* apply when about is done */
+  /*
   .footer__links-container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -156,6 +186,18 @@
     grid-template-areas:  "projects about"
                           "contact resume"
                           "social social";
+  }
+  */
+
+  /* remove when about is done */
+  .footer__links-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 2em;
+    grid-template-areas:  "projects"
+                          "contact"
+                          "resume"
+                          "social";
   }
 
   .footer__links-container:last-child {
@@ -182,6 +224,8 @@
 
 @media screen and (min-width: 1024px) {
 
+  /* apply when about is done */
+  /*
   .footer__links-container {
     font-size: 0.8em;
     grid-template-columns: 1fr 1fr 1fr;
@@ -190,7 +234,17 @@
     grid-template-areas:  "projects about contact"
                           "resume social social";
   }
+  */
 
+  /* remove when about is done */
+  .footer__links-container {
+    font-size: 0.8em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 3.2em;
+    grid-template-areas:  "projects contact resume"
+                          "social social .";
+  }
 }
 
 @media screen and (min-width: 1440px) {
