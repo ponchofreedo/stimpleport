@@ -1,6 +1,6 @@
 {
   "name": "stimpleport",
-  "version": "2.0.0",
+  "version": "2.0.5",
   "description": "2019 portfolio",
   "main": "gulpfile.js",
   "scripts": {
@@ -13,7 +13,10 @@
   },
   "keywords": [
     "portfolio",
-    "designer"
+    "designer",
+    "product designer",
+    "design",
+    "design portfolio"
   ],
   "author": "@ponchofreedo <zach.freed@gmail.com>",
   "license": "MIT",

@@ -3,69 +3,32 @@ a {
   fill: currentColor;   /* for the svg */
   text-decoration: none;
   height: auto;
+  transition: ease all 0.08s;
 }
 
 a:hover {
   text-decoration: none;
 }
 
-p a,
-.nav__link:not(.nav__link--home) a,
-.footer__link-container:not(.footer__social-container) h4,
-.footer__colophon-content a {
-	position: relative;
-	outline: none;
+a,
+a:hover,
+a:focus {
+  position: relative;
+  outline: none;
 }
 
 p a:hover,
-p a:focus,
-.nav__link:not(.nav__link--home) a:hover,
-.nav__link:not(.nav__link--home) a:focus,
-.footer__link-container:not(.footer__social-container):hover h4:hover,
-.footer__link-container:not(.footer__social-container):hover h4:focus,
-.footer__colophon-content a:hover,
-.footer__colophon-content a:focus {
-	outline: none;
-}
-
-p a::after,
-.nav__link:not(.nav__link--home) a::after,
-.footer__link-container:not(.footer__social-container):hover h4::after,
-.footer__colophon-content a::after {
-	position: absolute;
-  bottom: 44%;
-	left: 0;
-	width: 100%;
-	height: auto;
-	background: var(--c--primary);
-	content: '';
-	opacity: 0;
-	transition: ease height 0.08s,
-              ease opacity 0.08s;
-	transform:  translateY(44%);
-}
-
-p a:hover::after,
-p a:focus::after,
-.nav__link:not(.nav__link--home) a:hover::after,
-.nav__link:not(.nav__link--home) a:focus::after,
-.footer__link-container:not(.footer__social-container):hover h4::after,
-.footer__link-container:not(.footer__social-container):hover h4::after,
-.footer__colophon-content a:hover::after,
-.footer__colophon-content a:focus::after {
-	height: 0.24em;
-	opacity: 1;
-	transform: translateY(44%);
-}
-
-.footer__link-container:hover span {
+li.nav__link:not(.nav__link--home) a:hover,
+.footer__link-container:hover span,
+.footer__colophon-content a:hover {
+  cursor: pointer;
   text-decoration: underline;
   text-decoration-color: var(--c--primary);
 }
 
 .footer__link-container.footer__social-container svg {
+  /* color: var(--c--white); */
   border-bottom: 2px solid transparent;
-  transition: ease border-bottom-color 0.08s;
 }
 
 .footer__link-container.footer__social-container svg:hover {

@@ -95,7 +95,8 @@ gulp.task('serve', () => {
 
     gulp.watch([
       'src/*.html',
-      'src/img/**/*'
+      'src/img/**/*',
+      'src/pdf/**/*',
     ]).on('change', reload);
 
     gulp.watch('src/css/**/*.css', ['styles']);
