@@ -24,17 +24,16 @@ gulp.task('gzip', function() {
 });
 
 gulp.task('styles', () => {
-  return gulp.src('src/css/**/*.css')
+  return gulp.src('src/sass/**/*.scss')
     .pipe($.if(dev, $.sourcemaps.init(), $.sourcemaps.write()))
     .pipe($.plumber())
+    .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sass.logError))
     .pipe($.cssnano({
-      preset: 'default',
-      safe: true
+      preset: ['default', {
+        discardUnused: true
+      }]
     }))
     .pipe(postcss([
-      /*atImport({
-        skipDuplicates: false
-      }),*/
       presetEnv({
         browsers: [
           'last 2 versions',
@@ -48,7 +47,7 @@ gulp.task('styles', () => {
       })
     ]))
     .pipe(gulp.dest('public/css'))
-    .pipe($.size({ title : 'styles' }))
+    .pipe($.size({ title : 'sass' }))
     .pipe(reload({stream: true}));
 });
 
@@ -65,17 +64,21 @@ gulp.task('html', () => {
       removeStyleLinkTypeAttributes: true
     })))
     .pipe(gulp.dest('public'))
-    .pipe($.size({ title : 'html' }))
+    .pipe($.size({ title : 'html' }));
 });
 
 gulp.task('images', function (cb) {
   return gulp.src('src/img/**/*.{png,jpg,svg,jpeg,gif,ico}')
+    .pipe($.if(!dev, $.imagemin()))
     .pipe($.size({ title : 'images' }))
     .pipe(gulp.dest('public/img'));
 });
 
-gulp.task('test', () => {
-});
+gulp.task('fonts', function (cb) {
+  return gulp.src('src/fonts/**/*.{ttf,woff,woff2,otf}')
+    .pipe($.if(!dev, $.size({ title : 'copy fonts' })))
+    .pipe(gulp.dest('public/fonts'));
+})
 
 gulp.task('scripts', () => {
   return gulp.src('src/scripts/**/*.js')
@@ -86,22 +89,17 @@ gulp.task('scripts', () => {
 
 // spin a server
 gulp.task('serve', () => {
-  runSequence(['html', 'styles', 'scripts', 'images'], () => {
+  runSequence(['html', 'styles', 'scripts', 'images', 'fonts'], () => {
     browserSync.init({
       notify: false,
       port: 9000,
       server: ['src', 'public']
     });
 
-    gulp.watch([
-      'src/*.html',
-      'src/img/**/*',
-      'src/pdf/**/*'
-    ]).on('change', reload);
-
-    gulp.watch('src/css/**/*.css', ['styles']);
-    gulp.watch('src/scripts/**/*.js', ['scripts']);
-    gulp.watch('src/css/img/**/*.{png,jpg,svg,jpeg,gif,ico}', ['images']);
+    gulp.watch('src/*.html' ['html']).on('change', reload);
+    gulp.watch('src/sass/**/*.scss', ['styles']).on('change', reload);
+    gulp.watch('src/scripts/**/*.js', ['scripts']).on('change', reload);
+    gulp.watch('src/img/**/*.{png,jpg,svg,jpeg,gif,ico}', ['images']).on('change', reload);
   });
 });
 
@@ -112,7 +110,7 @@ gulp.task('default', () => {
 });
 
 // put a bow on it
-gulp.task('build', ['html', 'styles', 'images', 'scripts'], () => {
+gulp.task('build', ['html', 'styles', 'images', 'scripts', 'fonts'], () => {
   return gulp.src('src/**/*')
     .pipe($.size({ title: 'build' }));
 });

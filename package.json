@@ -1,11 +1,10 @@
 {
   "name": "stimpleport",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "description": "2019 portfolio",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp serve"
   },
   "repository": {
     "type": "git",
@@ -14,9 +13,8 @@
   "keywords": [
     "portfolio",
     "designer",
-    "product designer",
     "design",
-    "design portfolio"
+    "portfolio"
   ],
   "author": "@ponchofreedo <zach.freed@gmail.com>",
   "license": "MIT",
@@ -24,7 +22,6 @@
     "url": "https://github.com/ponchofreedo/stimpleport/issues"
   },
   "homepage": "https://github.com/ponchofreedo/stimpleport",
-  "_comment": "css-mqpacker ^6.0.2 removed temporarily",
   "engines": {
     "node": ">=4"
   },
@@ -33,6 +30,7 @@
     "cssnano": "^3.10.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^6.1.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.1",
