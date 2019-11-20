@@ -10,20 +10,28 @@ p {
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
+  position: relative;
 }
 
 h1 {
-  font-size: 3.2rem;
-  line-height: 1.1;
+  font-size: rem(64px);
+  line-height: rem(80px);
   letter-spacing: -0.08rem;
-  font-weight: $t--bold;
+  font-weight: $txt-w--bold;
+
+  &::after {
+    content: ".";
+    bottom: 0;
+    right: 0;
+    color: var(--theme-accent-color);
+  }
 }
 
 h2 {
   font-size: 2.1rem;
   line-height: 1.24;
   letter-spacing: -0.08rem;
-  font-weight: $t--bold;
+  font-weight: $txt-w--bold;
 }
 
 h3 {
@@ -40,5 +48,5 @@ p {
 }
 
 a {
-  font-weight: $t--bold;
+  font-weight: $txt-w--bold;
 }

@@ -6,17 +6,25 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-size: 62.5%;
+  font-size: 100%;
+
+  @include media("<=lg") {
+    font-size: 90%;
+  }
+
+  @include media("<=md") {
+    font-size: 80%;
+  }
+
+  @include media("<=sm") {
+    font-size: 70%;
+  }
 }
 
 body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
-  color: $c--md-gray;
-
-  @media screen and (max-width: 479px) {
-    font-size: $base-font-size * 0.8;
-    line-height: $base-line-height * 0.8;
-  }
+  background-color: var(--theme-background-color);
+  color: var(--theme-font-color);
 }

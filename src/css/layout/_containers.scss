@@ -1,0 +1,12 @@
+.main__container {
+
+  @include grid__container;
+}
+
+#home {
+
+  .main__container {
+
+    @include grid__container--landing;
+  }
+}

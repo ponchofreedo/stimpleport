@@ -1,0 +1,38 @@
+:root {
+  // setup the defaults for the colors.
+  // color will change based on the theme class.
+  --theme-font-color: inherit;
+  --theme-accent-color: inherit;
+  --theme-background-color: inherit;
+}
+
+[data-theme="dark"] {
+  --theme-font-color: #{$c--ghost};
+  --theme-background-color: #{$c--navy};
+  --theme-accent-color: #{$c--green};
+}
+
+[data-theme="light"] {
+  --theme-font-color: #{$c--navy};
+  --theme-background-color: #{$c--ghost};
+  --theme-accent-color: #{$c--dodger};
+}
+
+[data-theme] {
+
+  [href] {
+    color: var(--theme-accent-color);
+
+    &:visited {
+      color: var(--theme-accent-color);
+    }
+  }
+}
+
+.theme__switch {
+  display: block;
+
+  input {
+    display: none;
+  }
+}

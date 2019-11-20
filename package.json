@@ -1,9 +1,10 @@
 {
   "name": "stimpleport",
-  "version": "0.0.1",
-  "description": "2018 portfolio refresh",
+  "version": "2.0.6",
+  "description": "2019 portfolio refresh",
   "main": "gulpfile.js",
   "scripts": {
+    "start": "echo \"starting browser-sync and hot reload task\" && gulp serve",
     "postcss": "postcss -o public/css/cssnano.css src/css/cssnano.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

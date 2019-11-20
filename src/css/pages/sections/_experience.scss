@@ -1,0 +1,16 @@
+.experience {
+
+  @at-root #{&}__ {
+
+    &container {
+      display: flex;
+      flex-flow: column wrap;
+    }
+
+    &list-container {}
+
+    &list {
+      @include grid__repeated-cols(240px, 1fr, 64px);
+    }
+  }
+}

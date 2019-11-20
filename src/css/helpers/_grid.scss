@@ -1,13 +1,43 @@
-@mixin g-row {
+// use for simple landing pages, like home
+@mixin grid__container {
   display: flex;
-  flex: 0 1 auto;
-  flex-direction: row;
-  //flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+
+  @include media(">lg") {
+    max-width: rem(1024px);
+  }
 }
 
-@mixin g-col($fraction) {
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 100% * $fraction;
-  max-width: 100% * $fraction;
+// use for interior pages
+@mixin grid__container--landing {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+
+  @include media(">lg") {
+    max-width: rem(1024px);
+  }
+
+  @include media("<=lg") {
+    max-width: rem(960px);
+    padding-left: rem(24px);
+    padding-right: rem(24px);
+  }
+
+  @include media("<=sm") {
+    max-width: none;
+    padding-left: rem(16px);
+    padding-right: rem(16px);
+  }
+}
+
+@mixin grid__repeated-cols($min-size, $max-size, $gap-size) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-size, $max-size));
+  grid-gap: rem($gap-size);
 }

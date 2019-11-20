@@ -1,24 +1,33 @@
-$global-multiple: 8;
-$global-transition: all 0.08s ease-in-out 0s;
+$global-multiple: 8;  // everything is base 8 in some way
+$global-font-size: 16px;  // this is what the rem calculations are based on.
+$global-ui-timing: ($global-multiple * 0.01) * 1s;
+$global-transition: all $global-ui-timing ease-in-out;
+
+$base-line-height: 1.625;
+$base-font-size: 16px;
+$base-font-family: -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
+
 $image-path: './../img/';
 $svg-path: './../img/svg/';
 
-//$c--primary: #6C7A88; // gray
-//$c--primary: #0099FF;  // blue
-//$c--primary: #F05023;  // red
-$c--primary: #26CC8F;  // green
-$c--primary-link:#323232;
-$c--dk-primary: darken($c--primary, 16%);
-$c--dk-gray: #323232;
-$c--md-gray: #646464;
-$c--lt-gray: #969696;
+$c--navy: #18252D;
+$c--dodger: #0099FF;
+$c--green: #26CC8F;
+$c--gray-1: #7B91A3;
+$c--gray-2: #DCDCE0;
+$c--gray-3: #F5F7FA;
+$c--ghost: #FAFAFF;
 $c--white: white;
 $c--black: black;
 
-$base-line-height: 1.6;
-$base-font-size: 1.6rem;
-$base-font-family: 'Aktiv-Grotesk', 'system-ui', -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
-$t--bold: 700;
-$t--regular: 400;
+$txt-w--bold: 700;
+$txt-w--regular: 400;
 
-$base-ui-timing: 0.08s;
+// breakpoints
+// overrides the list defined in the _include-media mixin
+$breakpoints: (
+  'xs': 320px,
+  'sm': 520px,
+  'md': 776px,
+  'lg': 1024px
+) !default;

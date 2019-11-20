@@ -1,4 +1,4 @@
-@mixin transition($transition-type: all, $transition-duration: $base-ui-timing, $transition-easing: ease) {
+@mixin transition($transition-type: all, $transition-duration: $global-ui-timing, $transition-easing: ease) {
   @if $transition-easing == 'false' {
     transition: $transition-type $transition-duration;
   } @else {
