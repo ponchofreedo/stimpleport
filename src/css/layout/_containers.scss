@@ -6,7 +6,6 @@
 #home {
 
   .main__container {
-
-    @include grid__container--landing;
+    max-width: rem(1024px);
   }
 }

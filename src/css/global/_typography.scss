@@ -13,18 +13,41 @@ p {
   position: relative;
 }
 
-h1 {
-  font-size: rem(64px);
-  line-height: rem(80px);
-  letter-spacing: -0.08rem;
-  font-weight: $txt-w--bold;
+.heading {
 
-  &::after {
-    content: ".";
-    bottom: 0;
-    right: 0;
-    color: var(--theme-accent-color);
+  @at-root #{&}-- {
+
+    &xxl {
+      @include text-style(heading--xxl);
+      @include text-accent;
+    }
+
+    &xl {
+      @include text-style(heading--xl);
+      @include text-accent;
+    }
+
+    &lg {
+      @include text-style(heading--lg);
+    }
+
+    &md {
+      @include text-style(heading--md);
+    }
+
+    &sm {
+      @include text-style(heading--sm);
+    }
+
+    &xs {
+      @include text-style(heading--xs);
+    }
   }
+}
+
+#home h1 {
+  font-size: rem(72px);
+  line-height: rem(84px);
 }
 
 h2 {

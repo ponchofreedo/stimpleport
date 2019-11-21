@@ -1,0 +1,44 @@
+$text-styles: (
+  heading--xxl: (
+    font-weight: $txt-w--bold,
+    font-size: rem(72px),
+    line-height: rem(84px)
+  ),
+  heading--xl: (
+    font-weight: $txt-w--bold,
+    font-size: rem(64px),
+    line-height: rem(72px)
+  ),
+  heading--lg: (
+    font-weight: $txt-w--bold,
+    font-size: rem(56px),
+    line-height: rem(66px)
+  ),
+  heading--md: (
+    font-weight: $txt-w--regular,
+    font-size: rem(48px),
+    line-height: rem(52px)
+  ),
+  heading--sm: (
+    font-weight: $txt-w--bold,
+    font-size: rem(40px),
+    line-height: rem(49px)
+  ),
+  heading--xs: (
+    font-weight: $txt-w--bold,
+    font-size: rem(32px),
+    line-height: rem(40px)
+  )
+);
+
+@mixin text-style($style) {
+  @if map-has-key($text-styles, $style) {
+    $styles: map-get($text-styles, $style);
+
+    @each $property, $value in $styles {
+      #{$property}: $value;
+    }
+  } @else {
+    @warn "Unknown style, `#{$style}`, not in $text-styles";
+  }
+}

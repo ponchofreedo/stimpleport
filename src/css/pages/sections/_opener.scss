@@ -1,0 +1,10 @@
+header {
+  display: flex;
+  flex-direction: column;
+
+  li {
+    position: relative;
+    display: inline-flex;
+    @include strikethrough(default, var(--theme-accent-color));
+  }
+}

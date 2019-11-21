@@ -1,4 +1,3 @@
-// use for simple landing pages, like home
 @mixin grid__container {
   display: flex;
   flex-direction: column;
@@ -7,30 +6,24 @@
   margin: auto;
 
   @include media(">lg") {
-    max-width: rem(1024px);
-  }
-}
-
-// use for interior pages
-@mixin grid__container--landing {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  margin: auto;
-
-  @include media(">lg") {
-    max-width: rem(1024px);
+    max-width: rem(1280px);
+    padding-left: rem(40px);
+    padding-right: rem(40px);
   }
 
   @include media("<=lg") {
     max-width: rem(960px);
+    padding-left: rem(32px);
+    padding-right: rem(32px);
+  }
+
+  @include media("<=md") {
+    max-width: none;
     padding-left: rem(24px);
     padding-right: rem(24px);
   }
 
   @include media("<=sm") {
-    max-width: none;
     padding-left: rem(16px);
     padding-right: rem(16px);
   }

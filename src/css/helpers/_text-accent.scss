@@ -1,0 +1,12 @@
+// this will add a period to the end of a text block and accent its color based
+// on the theme.
+
+@mixin text-accent {
+
+  &::after {
+    content: ".";
+    bottom: 0;
+    right: 0;
+    color: var(--theme-accent-color);
+  }
+}
